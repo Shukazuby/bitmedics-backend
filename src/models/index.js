@@ -37,6 +37,11 @@ db.hospitalAdmins = require('./hospital-admins.model')(sequelizeInstance, Sequel
 db.roles = require('./roles.model')(sequelizeInstance, Sequelize);
 db.hospitals= require('./hospitals.model')(sequelizeInstance, Sequelize);
 db.hospitalSpecialties = require('./hospital-specialties.model')(sequelizeInstance, Sequelize);
+db.appointments = require('./appointments.model')(sequelizeInstance, Sequelize);
+db.medicalHistory = require('./medicalHistory.model')(sequelizeInstance, Sequelize);
+db.patients = require('./patients.model')(sequelizeInstance, Sequelize);
+
+
 
 // relationships for models
 

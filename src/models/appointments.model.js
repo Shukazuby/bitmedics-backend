@@ -6,19 +6,16 @@ module.exports = (sequelize, dataType) => {
       type: dataType.INTEGER,
       allowNull: false,
       trim: true,
-      unique: true,
     },
     hospitalId: {
         type: dataType.INTEGER,
         allowNull: false,
         trim: true,
-        unique: true,
       },
       doctorId: {
         type: dataType.INTEGER,
         allowNull: false,
         trim: true,
-        unique: true,
       },
   });
 

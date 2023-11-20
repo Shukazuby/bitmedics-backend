@@ -66,6 +66,6 @@ app.use(errorConverter);
 app.use(errorHandler);
 
 // intit DB
-db.sequelize.sync({force:true});
+db.sequelize.sync();
 
 module.exports = app;
