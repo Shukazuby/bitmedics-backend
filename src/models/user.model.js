@@ -1,7 +1,7 @@
 const validator = require('validator');
 
 module.exports = (sequelize, dataType) => {
-  const user = sequelize.define('user', {
+  const user = sequelize.define('users', {
     firstName: {
       type: dataType.STRING,
       allowNull: false,
@@ -38,6 +38,41 @@ module.exports = (sequelize, dataType) => {
     isEmailVerified: {
       type: dataType.BOOLEAN,
     },
+    phoneNumber: {
+      type: dataType.INTEGER,
+      allowNull: false,
+      trim: true,
+    },
+    dOB: {
+      type: dataType.DATE,
+      allowNull: false,
+      trim: true,
+    },
+    address: {
+      type: dataType.STRING,
+      allowNull: false,
+      trim: true,
+    },
+    profilePicture: {
+      type: dataType.STRING,
+      trim: true,
+    },
+    gender: {
+      type: dataType.STRING,
+      allowNull: false,
+      trim: true,
+    },
+    userType: {
+      type: dataType.STRING,
+      allowNull: false,
+      trim: true,
+    },
+    role_Id: {
+      type: dataType.JSON,
+      allowNull: false,
+      trim: true,
+    },
+
   });
 
   return user;
