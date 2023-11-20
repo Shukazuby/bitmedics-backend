@@ -23,12 +23,12 @@ module.exports = (sequelize, dataType) => {
       trim: true,
     },
     startDate: {
-      type: dataType.DATETIME,
+      type: dataType.DATE,
       allowNull: false,
       trim: true,
     },
     endDate: {
-      type: dataType.DATETIME,
+      type: dataType.DATE,
       allowNull: true,
       trim: true,
     },

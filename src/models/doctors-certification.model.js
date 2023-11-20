@@ -19,7 +19,7 @@ module.exports = (sequelize, dataType) => {
       trim: true,
     },
     certificationExpiryDate: {
-      type: dataType.DATETIME,
+      type: dataType.DATE,
       allowNull: true,
       trim: true,
     },

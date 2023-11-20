@@ -67,8 +67,8 @@ module.exports = (sequelize, dataType) => {
       allowNull: false,
       trim: true,
     },
-    role_Id: {
-      type: dataType.JSON,
+    roleId: {
+      type: dataType.INTEGER,
       allowNull: false,
       trim: true,
     },
