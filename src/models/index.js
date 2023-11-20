@@ -35,13 +35,8 @@ db.teachers_subjects = require('./teacher_subject.model')(sequelizeInstance, Seq
 db.doctors = require('./doctors.model')(sequelizeInstance, Sequelize);
 db.hospitalAdmins = require('./hospital-admins.model')(sequelizeInstance, Sequelize);
 db.roles = require('./roles.model')(sequelizeInstance, Sequelize);
-db.hospitals= require('./hospitals.model')(sequelizeInstance, Sequelize);
+db.hospitals = require('./hospitals.model')(sequelizeInstance, Sequelize);
 db.hospitalSpecialties = require('./hospital-specialties.model')(sequelizeInstance, Sequelize);
-db.appointments = require('./appointments.model')(sequelizeInstance, Sequelize);
-db.medicalHistory = require('./medicalHistory.model')(sequelizeInstance, Sequelize);
-db.patients = require('./patients.model')(sequelizeInstance, Sequelize);
-
-
 
 // relationships for models
 
@@ -51,13 +46,17 @@ db.users.belongsTo(db.roles);
 db.hospitalSpecialties.hasMany(db.hospitals);
 db.hospitals.belongsTo(db.hospitalSpecialties);
 
-
 db.users.hasOne(db.roles);
 db.teachers.belongsTo(db.users);
 
-
 db.teachers.belongsToMany(db.subjects, { through: db.teachers_subjects });
 db.subjects.belongsToMany(db.teachers, { through: db.teachers_subjects });
+
+db.doctors.hasMany(db.doctorCertifications);
+db.doctorCertifications.belongsTo(db.doctors);
+
+db.hospitals.hasOne(db.payments);
+db.payments.belongsTo(db.hospitals);
 
 //= ==============================
 // Define all relationships here below
