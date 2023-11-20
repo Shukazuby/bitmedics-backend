@@ -32,11 +32,20 @@ db.tokens = require('./token.model')(sequelizeInstance, Sequelize);
 db.teachers = require('./teacher.model')(sequelizeInstance, Sequelize);
 db.subjects = require('./subject.model')(sequelizeInstance, Sequelize);
 db.teachers_subjects = require('./teacher_subject.model')(sequelizeInstance, Sequelize);
+db.doctors = require('./doctors.model')(sequelizeInstance, Sequelize);
+db.hospitalAdmins = require('./hospital-admins.model')(sequelizeInstance, Sequelize);
+db.roles = require('./roles.model')(sequelizeInstance, Sequelize);
+
 
 // relationships for models
 
-db.users.hasOne(db.teachers);
+db.roles.hasMany(db.users);
+db.users.belongsTo(db.roles);
+
+
+db.users.hasOne(db.roles);
 db.teachers.belongsTo(db.users);
+
 
 db.teachers.belongsToMany(db.subjects, { through: db.teachers_subjects });
 db.subjects.belongsToMany(db.teachers, { through: db.teachers_subjects });
