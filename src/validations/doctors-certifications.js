@@ -1,13 +1,13 @@
-const joi = require('joi');
+const Joi = require('joi');
 
 const doctors = {
   body: Joi.object().keys({
-    doctorsId: joi.number().required(),
-    certificationName: joi.string().required(),
-    certificationIssuingAuthority: joi.string().required(),
-    certificationExpiryDate: joi.date(),
-    certificationDate: joi.date().required(),
-    certificationComment: joi.string(),
+    doctorsId: Joi.number().required(),
+    certificationName: Joi.string().required(),
+    certificationIssuingAuthority: Joi.string().required(),
+    certificationExpiryDate: Joi.date(),
+    certificationDate: Joi.date().required(),
+    certificationComment: Joi.string(),
   }),
 };
 module.exports = {

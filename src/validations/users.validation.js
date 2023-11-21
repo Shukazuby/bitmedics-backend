@@ -1,19 +1,20 @@
-const joi = require('joi');
-
+const Joi = require('joi');
+const { password, objectId } = require('./custom.validation');
 
 const users = {
     body: Joi.object().keys({
       firstName: Joi.string().required(),  
       email: Joi.string().required().email(),
       lastName: Joi.string().required(),
-      middleName: Joi.string().required(),
+      // middleName: Joi.string().required(),
       gender: Joi.string().required(),
-      dOB: Joi.number().required(),
-      phoneNumber: Joi.number().required(),
-      occupation: Joi.string(),
+      dOB: Joi.date().required(),
+      phoneNumber: Joi.number().integer().required(),
+      occupation: Joi.string().required(),
       address: Joi.string().required(),
       password: Joi.string().required().custom(password),
-
+      roleId: Joi.number().integer(),
+      profilePicture: Joi.string(),
     }),
   };
   module.exports = {

@@ -1,15 +1,15 @@
-const joi = require('joi');
+const Joi = require('joi');
 
 const hospitals = {
   body: Joi.object().keys({
-    hospitalName: joi.string().required(),
-    facilityUId: joi.string().required(),
-    hospitalSpecialityId: joi.string().required(),
-    paymentId: joi.string().required(),
-    email: joi.string().email().required(),
-    isEmailVerified: joi.boolean(),
-    address: joi.string().required(),
-    phoneNumber: joi.number().required(),
+    hospitalName: Joi.string().required(),
+    facilityUId: Joi.string().required(),
+    hospitalSpecialtyId: Joi.string().required(),
+    paymentId: Joi.string().required(),
+    email: Joi.string().email().required(),
+    isEmailVerified: Joi.boolean(),
+    address: Joi.string().required(),
+    phoneNumber: Joi.number().required(),
   }),
 };
 module.exports = {

@@ -1,9 +1,9 @@
-const joi = require('joi');
+const Joi = require('joi');
 
 const hospitalSpecialties = {
-  body: joi.object().keys({
-    hospitalSpecialties: joi.string().required(),
-    SpecialityDescription: joi.string().required(),
+  body: Joi.object().keys({
+    hospitalSpecialties: Joi.string().required(),
+    SpecialtyDescription: Joi.string(),
   }),
 };
 module.exports = {

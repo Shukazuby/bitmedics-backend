@@ -6,3 +6,5 @@ module.exports.medicalHistoryValidation = require('./medicalHistory.validation')
 module.exports.paymentValidation = require('./payments.validation');
 module.exports.usersValidation = require('./users.validation');
 module.exports.doctorsValidation = require('./doctors.validation');
+module.exports.hospitalAdminsValidation = require('./hospital-admins.validation');
+module.exports.rolesValidation = require('./roles.validation');

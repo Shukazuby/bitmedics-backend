@@ -1,4 +1,4 @@
-const joi = require('joi');
+const Joi = require('joi');
 
 
 const patients = {
@@ -8,11 +8,11 @@ const patients = {
       lastName: Joi.string().required(),
       middleName: Joi.string().required(),
       gender: Joi.string().required(),
-      dOB: Joi.number().required(),
+      dOB: Joi.date().required(),
       phoneNumber: Joi.number().required(),
       occupation: Joi.string(),
     }),
   };
   module.exports = {
-    patients
+    patients,
   };

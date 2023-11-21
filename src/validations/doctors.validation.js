@@ -1,4 +1,4 @@
-const joi = require('joi');
+const Joi = require('joi');
 
 
 const doctors = {
@@ -7,7 +7,7 @@ const doctors = {
       userId: Joi.number().required(),
       licenseUId: Joi.number().required(),
       specialization: Joi.number().required(),
-      yearOfExperience:  Joi.number().required(),
+      yearOfExperience:  Joi.date().required(),
     }),
   };
   module.exports = {
