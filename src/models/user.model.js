@@ -69,7 +69,6 @@ module.exports = (sequelize, dataType) => {
     },
     roleId: {
       type: dataType.INTEGER,
-      allowNull: false,
       trim: true,
     },
 
