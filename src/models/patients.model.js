@@ -41,10 +41,45 @@ module.exports = (sequelize, dataType) => {
         trim: true,
     },
     dOB: {
-        type: dataType.INTEGER,
+        type: dataType.DATE,
         allowNull: false,
         trim: true,
     },
+    allergies:{
+      type: dataType.TEXT,
+      trim: true,
+  },
+  occupation: {
+    type: dataType.STRING,
+    allowNull: false,
+    trim: true,
+},
+
+insuranceStatus: {
+  type: dataType.ENUM('YES','NO'),
+  allowNull: false,
+  trim: true,
+},
+guardianName: {
+  type: dataType.STRING,
+  allowNull: false,
+  trim: true,
+},
+guardianPhone: {
+  type: dataType.INTEGER,
+  allowNull: false,
+  trim: true,
+},
+guardianEmail: {
+  type: dataType.STRING,
+  allowNull: false,
+  trim: true,
+},
+
+
+
+
+
   });
 
   return patients;

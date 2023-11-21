@@ -7,7 +7,10 @@ const appointments = {
       patientId: Joi.number().required(),
       doctorId: Joi.number().required(),
       medicalConcern: Joi.string().required(),
+      appointmentStatus: Joi.enum('Pending','Completed', 'Cancelled').required(),
+      appointmentDate: Joi.date().required(),
     }),
+
   };
   module.exports = {
     appointments

@@ -17,6 +17,19 @@ module.exports = (sequelize, dataType) => {
         allowNull: false,
         trim: true,
       },
+      medicalConcern: {
+        type: dataType.STRING,
+      },
+      appointmentStatus: {
+        type: dataType.ENUM('Pending','Completed', 'Cancelled'),
+        allowNull: false,
+        trim: true,
+      },
+      appointmentDate: {
+        type: dataType.DATE,
+        allowNull: false,
+        trim: true,
+      },
   });
 
   return appointments;
